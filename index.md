@@ -1,11 +1,23 @@
 ---
 title: AI Engineering
 ---
+
 # AI Engineering Study Guide — Complete Self-Paced Course
 
 > 8 Weeks · ~50-70 hours · LLMs → RAG → Agents → Production
 
 This guide contains everything you need to learn AI engineering from foundations through production deployment. Each topic is explained in full detail with working code examples.
+
+## Table of Contents
+
+- [Week 1: Terminology & Prerequisites](#week-1-terminology--prerequisites) — Foundations
+- [Week 2: RAG — Components & Architecture](#week-2-rag--components--architecture) — Retrieval
+- [Week 3: Advanced RAG](#week-3-advanced-rag) — Retrieval
+- [Week 4: RAG Architectures & Specialised Types](#week-4-rag-architectures--specialised-types) — Retrieval
+- [Week 5: Single-Agent Systems](#week-5-single-agent-systems) — Agents
+- [Week 6: Multi-Agent Systems](#week-6-multi-agent-systems) — Agents
+- [Week 7: Context Engineering, Memory & Evaluation](#week-7-context-engineering-memory--evaluation) — Production
+- [Week 8: Capstone Project](#week-8-capstone-project) — Capstone
 
 ---
 
@@ -368,6 +380,16 @@ print(generate("What is 2+2?", system="You are a formal academic. Use precise, s
 ```
 
 ---
+
+## Resources
+
+- [Andrej Karpathy – Intro to LLMs (YouTube)](https://www.youtube.com/watch?v=zjkBMFhNj_g)
+- [OpenAI Tokenizer Playground](https://platform.openai.com/tokenizer)
+- [Anthropic Docs – Prompt Engineering](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering)
+- [Jay Alammar – The Illustrated Word2Vec](https://jalammar.github.io/illustrated-word2vec/)
+- [OpenAI API Reference – Chat Completions](https://platform.openai.com/docs/guides/text-generation)
+- [Anthropic API Reference – Messages](https://docs.anthropic.com/en/api/messages)
+- [tiktoken – OpenAI Tokenizer Library](https://github.com/openai/tiktoken)
 
 *Continue to Week 2...*
 
@@ -1555,6 +1577,15 @@ for src in result["sources"]:
 *Continue to Week 3...*
 
 
+## Resources
+
+- [LangChain RAG Quickstart](https://python.langchain.com/docs/tutorials/rag/)
+- [ChromaDB Documentation](https://docs.trychroma.com/)
+- [Pinecone – What is a Vector Database?](https://www.pinecone.io/learn/vector-database/)
+- [HNSW Paper (arXiv)](https://arxiv.org/abs/1603.09320)
+- [OpenAI Embeddings Guide](https://platform.openai.com/docs/guides/embeddings)
+- [MTEB Leaderboard – Embedding Model Benchmarks](https://huggingface.co/spaces/mteb/leaderboard)
+
 ---
 
 # WEEK 3: Advanced RAG
@@ -1939,6 +1970,15 @@ with open("benchmark_results.json", "w") as f:
 ```
 
 ---
+
+## Resources
+
+- [HyDE Paper (arXiv)](https://arxiv.org/abs/2212.10496)
+- [Cohere Rerank API](https://docs.cohere.com/docs/reranking)
+- [RAGAS – RAG Evaluation Framework](https://docs.ragas.io/)
+- [LangChain – Multi-Query Retriever](https://python.langchain.com/docs/how_to/MultiQueryRetriever/)
+- [sentence-transformers Cross-Encoders](https://www.sbert.net/docs/cross_encoder/usage/usage.html)
+- [rank-bm25 Python Library](https://github.com/dorianbrown/rank_bm25)
 
 *Continue to Week 4...*
 
@@ -2361,6 +2401,14 @@ print(agentic_rag("Compare Python's GIL with Java's threading model and explain 
 ```
 
 ---
+
+## Resources
+
+- [Microsoft GraphRAG Repository](https://github.com/microsoft/graphrag)
+- [Neo4j Documentation](https://neo4j.com/docs/)
+- [LightRAG GitHub](https://github.com/HKUDS/LightRAG)
+- [Agentic RAG – LlamaIndex Guide](https://docs.llamaindex.ai/en/stable/examples/agent/agentic_rag/)
+- [Neo4j Python Driver](https://neo4j.com/docs/python-manual/current/)
 
 *Continue to Week 5...*
 
@@ -2813,6 +2861,14 @@ def test_multiple_tools():
 
 ---
 
+## Resources
+
+- [ReAct Paper (arXiv)](https://arxiv.org/abs/2210.03629)
+- [Pydantic AI Documentation](https://ai.pydantic.dev/)
+- [Anthropic Tool Use Docs](https://docs.anthropic.com/en/docs/build-with-claude/tool-use)
+- [OpenAI Function Calling Guide](https://platform.openai.com/docs/guides/function-calling)
+- [LangChain Agents](https://python.langchain.com/docs/how_to/#agents)
+
 *Continue to Week 6...*
 
 
@@ -3210,6 +3266,14 @@ tracer.print_summary()
 
 ---
 
+## Resources
+
+- [LangGraph Documentation](https://langchain-ai.github.io/langgraph/)
+- [LangGraph Multi-Agent Tutorial](https://langchain-ai.github.io/langgraph/tutorials/multi_agent/)
+- [Anthropic – Building Effective Agents](https://www.anthropic.com/research/building-effective-agents)
+- [LangSmith Tracing](https://docs.smith.langchain.com/)
+- [CrewAI Framework](https://www.crewai.com/)
+
 *Continue to Week 7...*
 
 
@@ -3565,6 +3629,14 @@ def compare_pipelines(pipeline_a, pipeline_b, eval_set: list[EvalExample], judge
     print(f"{'Judge Score (avg)':<25} {avg(results_a['judge_scores']):>12.2f} {avg(results_b['judge_scores']):>12.2f} {avg(results_b['judge_scores'])-avg(results_a['judge_scores']):>+8.2f}")
 ```
 
+## Resources
+
+- [RAGAS Evaluation Framework](https://docs.ragas.io/)
+- [LangSmith Evaluation Docs](https://docs.smith.langchain.com/evaluation)
+- [Anthropic – Evals Guide](https://docs.anthropic.com/en/docs/test-and-evaluate/eval-tool)
+- [Brex – LLM-as-a-Judge Best Practices](https://github.com/brexhq/prompt-engineering)
+- [Helicone – LLM Observability](https://www.helicone.ai/)
+
 ---
 
 # WEEK 8: Capstone Project
@@ -3792,6 +3864,91 @@ metrics.num_llm_calls = 3
 monitor.record(metrics)
 print(monitor.summary())
 ```
+
+---
+
+## Resources
+
+- [Streamlit – Fast AI App Frontends](https://streamlit.io/)
+- [Gradio – ML Demo UIs](https://www.gradio.app/)
+- [Weights & Biases (experiment tracking)](https://wandb.ai/)
+- [System Design Primer (GitHub)](https://github.com/donnemartin/system-design-primer)
+- [OpenAI Rate Limits](https://platform.openai.com/docs/guides/rate-limits)
+- [Anthropic Rate Limits](https://docs.anthropic.com/en/api/rate-limits)
+
+---
+
+# Resources — All Links by Week
+
+## Week 1: Foundations
+- [Andrej Karpathy – Intro to LLMs (YouTube)](https://www.youtube.com/watch?v=zjkBMFhNj_g)
+- [OpenAI Tokenizer Playground](https://platform.openai.com/tokenizer)
+- [Anthropic Docs – Prompt Engineering](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering)
+- [Jay Alammar – The Illustrated Word2Vec](https://jalammar.github.io/illustrated-word2vec/)
+- [OpenAI API Reference – Chat Completions](https://platform.openai.com/docs/guides/text-generation)
+- [Anthropic API Reference – Messages](https://docs.anthropic.com/en/api/messages)
+- [tiktoken – OpenAI Tokenizer Library](https://github.com/openai/tiktoken)
+
+## Week 2: RAG Components & Architecture
+- [LangChain RAG Quickstart](https://python.langchain.com/docs/tutorials/rag/)
+- [ChromaDB Documentation](https://docs.trychroma.com/)
+- [Pinecone – What is a Vector Database?](https://www.pinecone.io/learn/vector-database/)
+- [HNSW Paper (arXiv)](https://arxiv.org/abs/1603.09320)
+- [OpenAI Embeddings Guide](https://platform.openai.com/docs/guides/embeddings)
+- [MTEB Leaderboard – Embedding Model Benchmarks](https://huggingface.co/spaces/mteb/leaderboard)
+
+## Week 3: Advanced RAG
+- [HyDE Paper (arXiv)](https://arxiv.org/abs/2212.10496)
+- [Cohere Rerank API](https://docs.cohere.com/docs/reranking)
+- [RAGAS – RAG Evaluation Framework](https://docs.ragas.io/)
+- [LangChain – Multi-Query Retriever](https://python.langchain.com/docs/how_to/MultiQueryRetriever/)
+- [sentence-transformers Cross-Encoders](https://www.sbert.net/docs/cross_encoder/usage/usage.html)
+- [rank-bm25 Python Library](https://github.com/dorianbrown/rank_bm25)
+
+## Week 4: RAG Architectures
+- [Microsoft GraphRAG Repository](https://github.com/microsoft/graphrag)
+- [Neo4j Documentation](https://neo4j.com/docs/)
+- [LightRAG GitHub](https://github.com/HKUDS/LightRAG)
+- [Agentic RAG – LlamaIndex Guide](https://docs.llamaindex.ai/en/stable/examples/agent/agentic_rag/)
+- [Neo4j Python Driver](https://neo4j.com/docs/python-manual/current/)
+
+## Week 5: Single-Agent Systems
+- [ReAct Paper (arXiv)](https://arxiv.org/abs/2210.03629)
+- [Pydantic AI Documentation](https://ai.pydantic.dev/)
+- [Anthropic Tool Use Docs](https://docs.anthropic.com/en/docs/build-with-claude/tool-use)
+- [OpenAI Function Calling Guide](https://platform.openai.com/docs/guides/function-calling)
+- [LangChain Agents](https://python.langchain.com/docs/how_to/#agents)
+
+## Week 6: Multi-Agent Systems
+- [LangGraph Documentation](https://langchain-ai.github.io/langgraph/)
+- [LangGraph Multi-Agent Tutorial](https://langchain-ai.github.io/langgraph/tutorials/multi_agent/)
+- [Anthropic – Building Effective Agents](https://www.anthropic.com/research/building-effective-agents)
+- [LangSmith Tracing](https://docs.smith.langchain.com/)
+- [CrewAI Framework](https://www.crewai.com/)
+
+## Week 7: Context Engineering & Evaluation
+- [RAGAS Evaluation Framework](https://docs.ragas.io/)
+- [LangSmith Evaluation Docs](https://docs.smith.langchain.com/evaluation)
+- [Anthropic – Evals Guide](https://docs.anthropic.com/en/docs/test-and-evaluate/eval-tool)
+- [Brex – LLM-as-a-Judge Best Practices](https://github.com/brexhq/prompt-engineering)
+- [Helicone – LLM Observability](https://www.helicone.ai/)
+
+## Week 8: Capstone & Production
+- [Streamlit – Fast AI App Frontends](https://streamlit.io/)
+- [Gradio – ML Demo UIs](https://www.gradio.app/)
+- [Weights & Biases (experiment tracking)](https://wandb.ai/)
+- [System Design Primer (GitHub)](https://github.com/donnemartin/system-design-primer)
+- [OpenAI Rate Limits](https://platform.openai.com/docs/guides/rate-limits)
+- [Anthropic Rate Limits](https://docs.anthropic.com/en/api/rate-limits)
+
+## General / Cross-Week
+- [aiengg.dev – Original Course Curriculum](https://aiengg.dev)
+- [Hugging Face – Models & Datasets](https://huggingface.co/)
+- [arXiv – AI/ML Papers](https://arxiv.org/list/cs.AI/recent)
+- [LangChain Documentation](https://python.langchain.com/docs/)
+- [LlamaIndex Documentation](https://docs.llamaindex.ai/)
+- [OpenAI Cookbook (Examples)](https://cookbook.openai.com/)
+- [Anthropic Cookbook (Examples)](https://github.com/anthropics/anthropic-cookbook)
 
 ---
 
