@@ -1,3 +1,6 @@
+---
+title: AI Engineering
+---
 # AI Engineering Study Guide — Complete Self-Paced Course
 
 > 8 Weeks · ~50-70 hours · LLMs → RAG → Agents → Production
